@@ -12,9 +12,8 @@ with urlopen('https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv') as f:
         raise 'Something was wrong'
 
 print('---')
-print(f'event color: red')
 print('events:')
 for name, days in holidays.items():
     times = [f'start: {d.replace("/", "-")}' for d in days]
-    print(f'  "{name}": {{ times: [{", ".join(times)}] }}')
+    print(f'  "{name}": {{ color: "red", times: [{", ".join(times)}] }}')
 print('---')
